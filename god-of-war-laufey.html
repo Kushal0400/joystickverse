@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="God of War Laufey First Look — Everything we know about Santa Monica Studio's next PS5 exclusive featuring Faye as the protagonist.">
+  <title>God of War Laufey — First Look | JoystickVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#0B0B0F;--card:#171A21;--surface:#1E2130;--primary:#7C3AED;--pri-lite:#9F5AFF;--secondary:#00E5FF;--text:#FFFFFF;--muted:#A0A0A0;--success:#22C55E;--danger:#EF4444;--border:rgba(255,255,255,0.07);--radius:12px;--radius-lg:20px;--ease:0.28s ease;--grad:linear-gradient(135deg,#7C3AED,#00E5FF);--font-head:'Poppins',sans-serif;--font-body:'Inter',sans-serif}
+[data-theme="light"]{--bg:#F0F0F5;--card:#FFFFFF;--surface:#E8E8F0;--text:#0B0B0F;--muted:#555;--border:rgba(0,0,0,0.07)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Progress */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--grad);z-index:9998;width:0;transition:width .1s linear}
+
+/* Header */
+.header{position:sticky;top:0;z-index:1000;background:rgba(11,11,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background var(--ease)}
+.header.scrolled{background:rgba(11,11,15,.97);box-shadow:0 4px 24px rgba(0,0,0,.5)}
+.nav-wrap{display:flex;align-items:center;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo-glyph{font-size:1.5rem}
+.logo-name{font-family:var(--font-head);font-size:1.22rem;font-weight:800}
+.logo-name em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.nav-item{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:8px;font-size:.87rem;font-weight:500;color:var(--muted);background:none;border:none;transition:color var(--ease),background var(--ease);white-space:nowrap;text-decoration:none}
+.nav-item:hover,.nav-item.active{color:var(--text);background:rgba(124,58,237,.1)}
+.nav-item.active{color:var(--pri-lite)}
+.nav-dropdown{position:relative}
+.dropdown-trigger{cursor:pointer}
+.dropdown-panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:8px;min-width:210px;opacity:0;visibility:hidden;transition:all var(--ease);box-shadow:0 8px 32px rgba(124,58,237,.14)}
+.nav-dropdown:hover .dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dp-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--muted);transition:background var(--ease),color var(--ease)}
+.dp-item:hover{background:rgba(124,58,237,.1);color:var(--text)}
+.dp-item.dp-soon{opacity:.55;cursor:default;pointer-events:none}
+.dp-icon{width:34px;height:34px;border-radius:8px;background:rgba(124,58,237,.1);display:flex;align-items:center;justify-content:center;color:var(--pri-lite);font-size:.85rem;flex-shrink:0}
+.dp-text{display:flex;flex-direction:column}
+.dp-text strong{font-size:.87rem;color:var(--text);font-weight:600}
+.dp-text small{font-size:.75rem;color:var(--muted)}
+.soon-pill{background:rgba(124,58,237,.18);color:var(--pri-lite);font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:50px;margin-left:auto}
+.nav-controls{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ctrl-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all var(--ease)}
+.ctrl-btn:hover{border-color:var(--primary);color:var(--pri-lite)}
+.btn-subscribe{display:inline-flex;align-items:center;gap:7px;background:var(--grad);color:#fff;padding:8px 18px;border-radius:50px;font-size:.82rem;font-weight:700;font-family:var(--font-head);box-shadow:0 4px 16px rgba(124,58,237,.35);transition:transform var(--ease),box-shadow var(--ease)}
+.btn-subscribe:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.5)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all var(--ease)}
+
+/* Article Hero */
+.article-hero{position:relative;height:500px;overflow:hidden}
+.article-hero img{width:100%;height:100%;object-fit:cover}
+.article-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,11,15,.2) 0%,rgba(11,11,15,.97) 100%)}
+.article-hero-content{position:absolute;bottom:0;left:0;right:0;padding:40px 24px}
+
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);margin-bottom:16px}
+.breadcrumb a{color:var(--pri-lite)}
+.breadcrumb a:hover{color:var(--secondary)}
+.breadcrumb i{font-size:.65rem}
+.article-cat{display:inline-block;background:var(--primary);color:#fff;padding:4px 14px;border-radius:50px;font-size:.73rem;font-weight:700;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.article-label{display:inline-block;background:rgba(0,229,255,.15);border:1px solid rgba(0,229,255,.3);color:var(--secondary);padding:4px 14px;border-radius:50px;font-size:.73rem;font-weight:700;font-family:var(--font-head);margin-left:8px}
+.article-title{font-family:var(--font-head);font-size:clamp(1.5rem,3.5vw,2.6rem);font-weight:900;line-height:1.15;max-width:780px;margin-bottom:18px}
+.article-meta{display:flex;flex-wrap:wrap;gap:18px;font-size:.8rem;color:var(--muted)}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-meta i{color:var(--pri-lite)}
+
+/* Article Layout */
+.article-layout{max-width:780px;margin:0 auto;padding:52px 24px 80px}
+
+/* Share */
+.share-bar{display:flex;align-items:center;gap:12px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:36px}
+.share-label{font-size:.78rem;color:var(--muted);font-weight:600;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
+.share-btn{display:flex;align-items:center;gap:7px;padding:7px 14px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.78rem;cursor:pointer;transition:all var(--ease)}
+.share-btn:hover{border-color:var(--primary);color:var(--pri-lite)}
+
+/* TOC */
+.toc{background:var(--card);border:1px solid rgba(124,58,237,.2);border-left:3px solid var(--primary);border-radius:var(--radius);padding:22px 28px;margin-bottom:40px}
+.toc-title{font-family:var(--font-head);font-size:.88rem;font-weight:700;color:var(--pri-lite);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.toc ol{list-style:decimal;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.toc ol li a{font-size:.87rem;color:var(--muted);transition:color var(--ease)}
+.toc ol li a:hover{color:var(--pri-lite)}
+
+/* Article Body */
+.article-body h2{font-family:var(--font-head);font-size:1.45rem;font-weight:800;margin:44px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border);scroll-margin-top:90px}
+.article-body h3{font-family:var(--font-head);font-size:1.08rem;font-weight:700;margin:28px 0 10px;color:var(--pri-lite);scroll-margin-top:90px}
+.article-body p{color:rgba(255,255,255,.83);line-height:1.85;margin-bottom:20px;font-size:.96rem}
+.article-body ul{list-style:none;padding:0;margin-bottom:20px;display:flex;flex-direction:column;gap:10px}
+.article-body ul li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.83);font-size:.94rem;line-height:1.7}
+.article-body ul li::before{content:'▸';color:var(--primary);flex-shrink:0;margin-top:2px}
+
+/* Highlight */
+.highlight-box{background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.22);border-left:3px solid var(--primary);border-radius:var(--radius);padding:20px 24px;margin:28px 0}
+.highlight-box p{margin:0!important;font-style:italic;color:rgba(255,255,255,.92)!important}
+.highlight-box cite{display:block;margin-top:8px;font-size:.8rem;color:var(--muted)}
+
+/* Specs */
+.specs-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:30px 0}
+.specs-title{background:rgba(124,58,237,.14);padding:11px 20px;font-family:var(--font-head);font-size:.82rem;font-weight:700;color:var(--pri-lite);text-transform:uppercase;letter-spacing:.5px}
+.specs-row{display:flex;padding:11px 20px;border-bottom:1px solid var(--border);font-size:.87rem}
+.specs-row:last-child{border-bottom:none}
+.specs-key{width:150px;flex-shrink:0;color:var(--muted);font-weight:500}
+.specs-val{color:var(--text)}
+
+/* Verdict */
+.verdict-box{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(0,229,255,.07));border:1px solid rgba(124,58,237,.3);border-radius:var(--radius-lg);padding:28px 30px;margin:40px 0 0}
+.verdict-title{font-family:var(--font-head);font-size:.82rem;font-weight:700;color:var(--pri-lite);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.verdict-box p{margin:0!important;font-size:.97rem!important;color:rgba(255,255,255,.92)!important}
+
+/* Author */
+.author-card{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-top:52px}
+.author-avatar{width:60px;height:60px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.author-name{font-family:var(--font-head);font-size:.97rem;font-weight:700;margin-bottom:4px}
+.author-bio{font-size:.83rem;color:var(--muted);line-height:1.6}
+
+/* Article Nav */
+.article-nav{display:flex;justify-content:space-between;gap:16px;margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+.art-nav-btn{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:13px 18px;color:var(--muted);font-size:.84rem;transition:all var(--ease)}
+.art-nav-btn:hover{border-color:var(--primary);color:var(--pri-lite)}
+
+/* Footer */
+.footer{background:var(--card);border-top:1px solid var(--border);padding-top:72px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:52px}
+.fc-brand .logo{margin-bottom:12px}
+.fc-brand p{color:var(--muted);font-size:.86rem;line-height:1.7;margin-bottom:18px}
+.socials{display:flex;gap:9px}
+.social-btn{width:37px;height:37px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.84rem;transition:all var(--ease)}
+.social-btn:hover{border-color:var(--primary);color:var(--pri-lite);background:rgba(124,58,237,.1);transform:translateY(-3px)}
+.fc-col h4{font-family:var(--font-head);font-size:.93rem;font-weight:700;margin-bottom:16px;padding-bottom:10px;position:relative}
+.fc-col h4::after{content:'';position:absolute;bottom:0;left:0;width:24px;height:2px;background:var(--grad);border-radius:2px}
+.fc-col ul{display:flex;flex-direction:column;gap:9px}
+.fc-col ul a{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:.86rem;transition:all var(--ease)}
+.fc-col ul a:hover{color:var(--pri-lite);padding-left:4px}
+.fc-col ul a i{font-size:.65rem;color:var(--primary)}
+.fc-muted{opacity:.55;cursor:default;pointer-events:none}
+.footer-bottom{border-top:1px solid var(--border);padding:20px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+/* Back to Top */
+.back-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:.84rem;box-shadow:0 4px 18px rgba(124,58,237,.45);opacity:0;visibility:hidden;transform:translateY(16px);transition:all var(--ease);z-index:100}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.back-top:hover{transform:translateY(-4px)}
+
+/* Responsive */
+@media(max-width:768px){
+  .main-nav{display:none;position:fixed;inset:72px 0 0;background:rgba(11,11,15,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start;padding:20px 16px;gap:4px;z-index:999}
+  .main-nav.open{display:flex}
+  .nav-item{width:100%;padding:12px 16px;font-size:.94rem}
+  .dropdown-panel{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;background:rgba(124,58,237,.05);padding:0 0 0 12px;margin-top:4px}
+  .mobile-toggle{display:flex}
+  .btn-subscribe{display:none}
+  .article-hero{height:340px}
+  .article-title{font-size:1.4rem}
+  .specs-row{flex-direction:column;gap:4px}
+  .specs-key{width:100%}
+  .footer-grid{grid-template-columns:1fr}
+  .share-bar{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<div id="progressBar" class="progress-bar"></div>
+
+<!-- Header -->
+<header id="header" class="header">
+  <div class="nav-wrap container">
+    <a href="index.html" class="logo">
+      <span class="logo-glyph">🎮</span>
+      <span class="logo-name">Joystick<em>Verse</em></span>
+    </a>
+    <nav id="mainNav" class="main-nav">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="index.html#posts" class="nav-item active">Blog</a>
+      <div class="nav-dropdown">
+        <button class="nav-item dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-panel">
+          <a href="index.html#posts" class="dp-item">
+            <span class="dp-icon"><i class="fas fa-fist-raised"></i></span>
+            <span class="dp-text"><strong>Action</strong><small>6 Articles</small></span>
+          </a>
+          <a href="#" class="dp-item dp-soon"><span class="dp-icon"><i class="fas fa-ghost"></i></span><span class="dp-text"><strong>Horror</strong><small>Coming Soon</small></span><span class="soon-pill">Soon</span></a>
+          <a href="#" class="dp-item dp-soon"><span class="dp-icon"><i class="fas fa-khanda"></i></span><span class="dp-text"><strong>Mythology</strong><small>Coming Soon</small></span><span class="soon-pill">Soon</span></a>
+        </div>
+      </div>
+      <a href="index.html#about" class="nav-item">About</a>
+      <a href="index.html#contact" class="nav-item">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button id="themeBtn" class="ctrl-btn"><i class="fas fa-moon"></i></button>
+      <a href="index.html#newsletter" class="btn-subscribe"><i class="fas fa-bell"></i> Subscribe</a>
+      <button id="mobileToggle" class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="article-hero">
+  <img src="https://picsum.photos/seed/laufey2026/1400/600" alt="God of War Laufey" loading="eager">
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-content container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="index.html#posts">Blog</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>God of War Laufey</span>
+    </div>
+    <span class="article-cat">Action</span>
+    <span class="article-label">🔍 First Look</span>
+    <h1 class="article-title">God of War Laufey — First Look: Everything We Know About Faye's Standalone Adventure</h1>
+    <div class="article-meta">
+      <span><i class="fas fa-user-circle"></i> Kushal Sharma</span>
+      <span><i class="fas fa-calendar-alt"></i> July 8, 2026</span>
+      <span><i class="fas fa-clock"></i> 7 min read</span>
+      <span><i class="fas fa-tag"></i> Preview</span>
+    </div>
+  </div>
+</div>
+
+<!-- Article -->
+<main class="article-layout">
+
+  <div class="share-bar">
+    <span class="share-label"><i class="fas fa-share-alt"></i> Share</span>
+    <button class="share-btn" onclick="shareArticle('twitter')"><i class="fab fa-twitter"></i> Twitter</button>
+    <button class="share-btn" onclick="shareArticle('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+    <button class="share-btn" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title"><i class="fas fa-list"></i> Table of Contents</div>
+    <ol>
+      <li><a href="#what-is">What Is God of War Laufey?</a></li>
+      <li><a href="#story">Story: Death Was Supposed to Be the End</a></li>
+      <li><a href="#everywhen">The Everywhen: A Brand New World</a></li>
+      <li><a href="#gameplay">Gameplay: Faster, Flashier, Deadlier</a></li>
+      <li><a href="#characters">New Characters You Need to Know</a></li>
+      <li><a href="#mythologies">Multiple Mythologies Return</a></li>
+      <li><a href="#release">Release Window & Platform Info</a></li>
+      <li><a href="#verdict">JoystickVerse Verdict</a></li>
+    </ol>
+  </div>
+
+  <div class="article-body">
+
+    <p>When Sony's PlayStation State of Play kicked off on June 2, 2026, nobody expected the final reveal to hit this hard. After hours of announcements, Santa Monica Studio dropped something the God of War community had been quietly hoping for — a full gameplay reveal of <strong>God of War Laufey</strong>, a standalone PS5 game starring none other than Faye herself.</p>
+
+    <p>The studio that gave us Kratos's Norse comeback is now handing the controller to the woman behind it all. And from what we saw in that reveal, Faye is not playing around.</p>
+
+    <div class="specs-box">
+      <div class="specs-title">⚡ Quick Info</div>
+      <div class="specs-row"><span class="specs-key">Developer</span><span class="specs-val">Santa Monica Studio</span></div>
+      <div class="specs-row"><span class="specs-key">Publisher</span><span class="specs-val">Sony Interactive Entertainment</span></div>
+      <div class="specs-row"><span class="specs-key">Platform</span><span class="specs-val">PlayStation 5 (Exclusive)</span></div>
+      <div class="specs-row"><span class="specs-key">Release Window</span><span class="specs-val">First Half 2027 (Rumored)</span></div>
+      <div class="specs-row"><span class="specs-key">Protagonist</span><span class="specs-val">Faye / Laufey (Deborah Ann Woll)</span></div>
+      <div class="specs-row"><span class="specs-key">Setting</span><span class="specs-val">The Everywhen — Afterlife of the Gods</span></div>
+    </div>
+
+    <h2 id="what-is">What Is God of War Laufey?</h2>
+    <p>God of War Laufey is the next mainline entry in Sony's God of War franchise — but this time Kratos is not the playable character. Instead, we step into the shoes of <strong>Laufey (Faye)</strong>, Kratos's deceased wife and Atreus's mother. Long-time fans only knew Faye through mentions and memories. She was dead before the 2018 game even began. Santa Monica Studio clearly had bigger plans for her.</p>
+
+    <h2 id="story">Story: Death Was Supposed to Be the End</h2>
+    <p>The story picks up right after Faye's death. Instead of simply fading into nothing, she wakes up in a strange realm — the afterlife of the gods, called <strong>The Everywhen</strong>. Something has gone very wrong with the flow of magic, and Faye quickly realizes her plans to protect Kratos and Atreus from beyond death are now at serious risk.</p>
+
+    <div class="highlight-box">
+      <p>"Death was supposed to be the end, but for Laufey (Faye), warrior and wife to Kratos, a new adventure is just beginning. Awakening unexpectedly in a strange land after her death, Faye discovers the plans she put in place to protect Kratos and Atreus in her absence are now at risk."</p>
+      <cite>— Official PlayStation description</cite>
+    </div>
+
+    <p>The story runs <strong>parallel to God of War (2018) and Ragnarök</strong>. While Kratos and Atreus were spreading Faye's ashes and fighting Norse gods, Faye was fighting her own war in the afterlife — simultaneously. That single idea gives the entire Norse saga a completely new layer.</p>
+
+    <h2 id="everywhen">The Everywhen: A Brand New World</h2>
+    <p>The Everywhen is the most exciting new location in the God of War universe since the Norse realms were introduced. It's described as the birthplace and endpoint where all magic returns — a transcendent realm above all the worlds we've seen so far. Gods from multiple mythologies share this space, not always peacefully. The gameplay trailer showed environments that are breathtaking — ethereal landscapes, impossible architecture, a place that exists outside of time.</p>
+
+    <h2 id="gameplay">Gameplay: Faster, Flashier, Deadlier</h2>
+    <p>Faye is NOT Kratos. She plays completely differently, and that's intentional.</p>
+    <ul>
+      <li><strong>Enhanced Mobility:</strong> Faye moves seamlessly between ground and air combat without halting the action.</li>
+      <li><strong>Her Weapon:</strong> A powerful sword replaces the Leviathan Axe, with fast, elegant strikes that chain into combos.</li>
+      <li><strong>Chakra Abilities:</strong> Faye can hurl and recall chakra-like projectiles, adding a satisfying ranged layer.</li>
+      <li><strong>Feather Prism Form:</strong> A transformation that grants enhanced mobility and ethereal attacks that phase through enemy defenses.</li>
+      <li><strong>Executions:</strong> Chain dodges into brutal combos and close the fight with a signature execution that is pure style.</li>
+    </ul>
+
+    <h2 id="characters">New Characters You Need to Know</h2>
+    <h3>Phranque — The Cosmic Cube</h3>
+    <p>One of Faye's companions is a <strong>cosmic cube with an earnest personality</strong>, voiced by Jack Quaid (The Boys). Phranque will do whatever it takes to protect his friends — and the gameplay showed he can literally function as a trampoline for Faye's combat. It's weird, unexpected, and looks brilliant.</p>
+
+    <h3>Rue — The Enchanted Ribbon Guardian</h3>
+    <p>Played by Perlina Lau, Rue is an enchanted ribbon guardian on a mission to keep a powerful sword from falling into the wrong hands. She's the emotional anchor of the group — grounded where Phranque is chaotic.</p>
+
+    <h2 id="mythologies">Multiple Mythologies Return</h2>
+    <p>Multiple mythologies collide in The Everywhen:</p>
+    <ul>
+      <li><strong>Egyptian Mythology:</strong> Sekhmet and Begtse appear in the trailer — both very hostile toward Faye.</li>
+      <li><strong>Mongolian-Inspired Enemies:</strong> Spotted in gameplay footage, suggesting another mythology thread.</li>
+      <li><strong>Norse Connections:</strong> The story ties directly into the Norse saga, keeping that thread alive.</li>
+    </ul>
+
+    <h2 id="release">Release Window & Platform Info</h2>
+    <p>God of War Laufey is a <strong>PS5 exclusive</strong>. No exact date confirmed yet, but reliable sources point to <strong>the first half of 2027</strong>. The game is already on the PlayStation Store wishlist. A PC release hasn't been announced, but given that both GoW 2018 and Ragnarök came to PC eventually, it's only a matter of time.</p>
+
+    <h2 id="verdict">JoystickVerse Verdict</h2>
+    <div class="verdict-box">
+      <div class="verdict-title"><i class="fas fa-gamepad"></i> JoystickVerse First Look Verdict</div>
+      <p>God of War Laufey is shaping up to be one of the most exciting PS5 games on the horizon. Santa Monica Studio is taking a real creative risk — swapping Kratos for a character many players have never met — and from what we've seen, they're pulling it off. The combat looks spectacular, the world is fresh, and the story premise is genuinely clever. This isn't a spin-off. This is the next God of War. Wishlist it now and watch this space — we'll cover every new reveal as it drops.</p>
+    </div>
+
+  </div>
+
+  <div class="author-card">
+    <div class="author-avatar">🎮</div>
+    <div>
+      <div class="author-name">Kushal Sharma</div>
+      <div class="author-bio">Gaming writer at JoystickVerse. Covers Action, Horror, and Mythology games. Currently playing way too much Sekiro.</div>
+    </div>
+  </div>
+
+  <div class="article-nav">
+    <a href="index.html" class="art-nav-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="fc-brand">
+        <a href="index.html" class="logo"><span class="logo-glyph">🎮</span><span class="logo-name">Joystick<em>Verse</em></span></a>
+        <p>Your go-to gaming blog for in-depth reviews, guides, and news. Built for real gamers.</p>
+        <div class="socials">
+          <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="fc-col"><h4>Quick Links</h4><ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="index.html#posts"><i class="fas fa-chevron-right"></i> Blog</a></li>
+        <li><a href="index.html#newsletter"><i class="fas fa-chevron-right"></i> Newsletter</a></li>
+      </ul></div>
+      <div class="fc-col"><h4>Categories</h4><ul>
+        <li><a href="index.html#posts"><i class="fas fa-chevron-right"></i> Action</a></li>
+        <li><a href="#" class="fc-muted"><i class="fas fa-chevron-right"></i> Horror <span class="soon-pill">Soon</span></a></li>
+        <li><a href="#" class="fc-muted"><i class="fas fa-chevron-right"></i> Mythology <span class="soon-pill">Soon</span></a></li>
+      </ul></div>
+      <div class="fc-col"><h4>Legal</h4><ul>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 JoystickVerse. All rights reserved. Made with <span class="g">❤</span> for gamers.</p></div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+// Progress
+window.addEventListener('scroll',()=>{const b=document.getElementById('progressBar');if(b){const s=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight;b.style.width=Math.min((s/t)*100,100)+'%'}});
+// Header
+const hdr=document.getElementById('header');window.addEventListener('scroll',()=>{if(hdr)hdr.classList.toggle('scrolled',window.scrollY>50)});
+// Mobile nav
+const tog=document.getElementById('mobileToggle'),nav=document.getElementById('mainNav');
+if(tog&&nav){tog.addEventListener('click',()=>{const o=nav.classList.toggle('open');tog.classList.toggle('x',o)});nav.querySelectorAll('a.nav-item').forEach(l=>l.addEventListener('click',()=>{nav.classList.remove('open');tog.classList.remove('x')}))}
+// Theme
+const tb=document.getElementById('themeBtn');let dk=true;if(tb){tb.addEventListener('click',()=>{dk=!dk;document.documentElement.setAttribute('data-theme',dk?'dark':'light');tb.innerHTML=dk?'<i class="fas fa-moon"></i>':'<i class="fas fa-sun"></i>'})}
+// Back to top
+const btt=document.getElementById('backToTop');window.addEventListener('scroll',()=>{if(btt)btt.classList.toggle('show',window.scrollY>400)});if(btt){btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
+// Share
+function shareArticle(p){const u=encodeURIComponent(window.location.href),t=encodeURIComponent('God of War Laufey — First Look | JoystickVerse');if(p==='twitter')window.open('https://twitter.com/intent/tweet?text='+t+'&url='+u,'_blank');if(p==='whatsapp')window.open('https://wa.me/?text='+t+'%20'+u,'_blank')}
+function copyLink(){navigator.clipboard.writeText(window.location.href).then(()=>{const b=document.querySelector('[onclick="copyLink()"]'),o=b.innerHTML;b.innerHTML='<i class="fas fa-check"></i> Copied!';b.style.borderColor='var(--success)';b.style.color='var(--success)';setTimeout(()=>{b.innerHTML=o;b.style.borderColor='';b.style.color=''},2000)})}
+</script>
+</body>
+</html>
