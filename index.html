@@ -30,7 +30,7 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -163,7 +163,7 @@
 
       <div class="hero-stats">
         <div class="hstat">
-          <span class="hstat-num">5</span>
+          <span class="hstat-num">6</span>
           <span class="hstat-lbl">Articles</span>
         </div>
         <span class="hstat-sep"></span>
@@ -195,8 +195,38 @@
 
       <div class="posts-grid">
 
-        <!-- Card 1: Featured -->
+        <!-- Card 1: Featured — God of War Laufey -->
         <article class="post-card card-featured reveal" data-delay="0">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/laufey2026/900/500" alt="God of War Laufey" loading="lazy">
+            <div class="card-img-overlay"></div>
+            <span class="cat-tag">Action</span>
+            <span class="card-label label-new">🔥 Latest</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span><i class="fas fa-user-circle"></i> Kushal Sharma</span>
+              <span><i class="fas fa-calendar-alt"></i> July 8, 2026</span>
+              <span><i class="fas fa-clock"></i> 7 min read</span>
+            </div>
+            <h3 class="card-title">God of War Laufey — First Look: Everything We Know About Faye's Standalone Adventure</h3>
+            <p class="card-excerpt">Santa Monica Studio just revealed Faye's standalone PS5 adventure. New world, new combat, new characters — and it's running parallel to GoW 2018 and Ragnarök. Here's everything we know.</p>
+            <div class="card-foot">
+              <a href="god-of-war-laufey.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+              <div class="card-acts">
+                <button class="act-btn like-btn" aria-label="Like">
+                  <i class="fas fa-heart"></i> <span>47</span>
+                </button>
+                <button class="act-btn bkmk-btn" aria-label="Bookmark">
+                  <i class="fas fa-bookmark"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 — God of War Ragnarök -->
+        <article class="post-card reveal" data-delay="1">
           <div class="card-img">
             <img src="https://picsum.photos/seed/gowr2025/900/500" alt="God of War Ragnarök" loading="lazy">
             <div class="card-img-overlay"></div>
@@ -225,8 +255,8 @@
           </div>
         </article>
 
-        <!-- Card 2 -->
-        <article class="post-card reveal" data-delay="1">
+        <!-- Card 3 — Sekiro -->
+        <article class="post-card reveal" data-delay="2">
           <div class="card-img">
             <img src="https://picsum.photos/seed/sekiro2025/800/450" alt="Sekiro: Shadows Die Twice" loading="lazy">
             <div class="card-img-overlay"></div>
@@ -496,6 +526,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
