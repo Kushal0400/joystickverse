@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with JoystickVerse — questions, collabs, or feedback on our gaming coverage.">
+  <title>Contact | JoystickVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{--bg:#0B0B0F;--card:#171A21;--surface:#1E2130;--primary:#7C3AED;--pri-lite:#9F5AFF;--secondary:#00E5FF;--text:#FFFFFF;--muted:#A0A0A0;--success:#22C55E;--border:rgba(255,255,255,0.07);--radius:12px;--radius-lg:20px;--ease:0.28s ease;--grad:linear-gradient(135deg,#7C3AED,#00E5FF);--font-head:'Poppins',sans-serif;--font-body:'Inter',sans-serif}
+[data-theme="light"]{--bg:#F0F0F5;--card:#FFFFFF;--surface:#E8E8F0;--text:#0B0B0F;--muted:#555;--border:rgba(0,0,0,0.07)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Header (shared) */
+.header{position:sticky;top:0;z-index:1000;background:rgba(11,11,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header.scrolled{background:rgba(11,11,15,.97);box-shadow:0 4px 24px rgba(0,0,0,.5)}
+.nav-wrap{display:flex;align-items:center;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo-glyph{font-size:1.5rem}
+.logo-name{font-family:var(--font-head);font-size:1.22rem;font-weight:800}
+.logo-name em{font-style:normal;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.main-nav{display:flex;align-items:center;gap:2px;flex:1}
+.nav-item{display:inline-flex;align-items:center;gap:5px;padding:7px 13px;border-radius:8px;font-size:.87rem;font-weight:500;color:var(--muted);background:none;border:none;transition:color var(--ease),background var(--ease);white-space:nowrap}
+.nav-item:hover,.nav-item.active{color:var(--text);background:rgba(124,58,237,.1)}
+.nav-item.active{color:var(--pri-lite)}
+.nav-dropdown{position:relative}
+.dropdown-panel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:8px;min-width:210px;opacity:0;visibility:hidden;transition:all var(--ease);box-shadow:0 8px 32px rgba(124,58,237,.14)}
+.nav-dropdown:hover .dropdown-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dp-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;color:var(--muted);transition:background var(--ease),color var(--ease)}
+.dp-item:hover{background:rgba(124,58,237,.1);color:var(--text)}
+.dp-item.dp-soon{opacity:.55;cursor:default;pointer-events:none}
+.dp-icon{width:34px;height:34px;border-radius:8px;background:rgba(124,58,237,.1);display:flex;align-items:center;justify-content:center;color:var(--pri-lite);font-size:.85rem;flex-shrink:0}
+.dp-text{display:flex;flex-direction:column}
+.dp-text strong{font-size:.87rem;color:var(--text);font-weight:600}
+.dp-text small{font-size:.75rem;color:var(--muted)}
+.soon-pill{background:rgba(124,58,237,.18);color:var(--pri-lite);font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:50px;margin-left:auto}
+.nav-controls{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.ctrl-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all var(--ease)}
+.ctrl-btn:hover{border-color:var(--primary);color:var(--pri-lite)}
+.btn-subscribe{display:inline-flex;align-items:center;gap:7px;background:var(--grad);color:#fff;padding:8px 18px;border-radius:50px;font-size:.82rem;font-weight:700;font-family:var(--font-head);box-shadow:0 4px 16px rgba(124,58,237,.35)}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.mobile-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}
+
+/* Page Hero */
+.page-hero{padding:70px 0 50px;text-align:center;position:relative;overflow:hidden}
+.page-hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:rgba(124,58,237,.14);border-radius:50%;filter:blur(90px);pointer-events:none}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;color:var(--muted);margin-bottom:18px;position:relative}
+.breadcrumb a{color:var(--pri-lite)}
+.section-eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.28);color:var(--pri-lite);padding:5px 14px;border-radius:50px;font-size:.8rem;font-weight:600;font-family:var(--font-head);margin-bottom:14px;position:relative}
+.page-hero h1{font-family:var(--font-head);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;margin-bottom:16px;position:relative}
+.page-hero p{color:var(--muted);max-width:560px;margin:0 auto;font-size:1.02rem;line-height:1.7;position:relative}
+
+/* Contact Grid */
+.contact-wrap{padding-bottom:80px}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1.4fr;gap:28px}
+
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:22px}
+.info-row{display:flex;align-items:flex-start;gap:16px}
+.info-icon{width:46px;height:46px;border-radius:12px;background:rgba(124,58,237,.12);display:flex;align-items:center;justify-content:center;color:var(--pri-lite);font-size:1.1rem;flex-shrink:0}
+.info-label{font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
+.info-value{font-size:.95rem;font-weight:600}
+.info-value a{transition:color var(--ease)}
+.info-value a:hover{color:var(--pri-lite)}
+.info-divider{height:1px;background:var(--border);margin:2px 0}
+.social-row{display:flex;gap:10px}
+.social-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.9rem;transition:all var(--ease)}
+.social-btn:hover{border-color:var(--primary);color:var(--pri-lite);background:rgba(124,58,237,.1);transform:translateY(-3px)}
+
+.faq-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px}
+.faq-card h3{font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:9px}
+.faq-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none;padding-bottom:0}
+.faq-item:first-child{padding-top:0}
+.faq-q{font-size:.94rem;font-weight:700;margin-bottom:7px;display:flex;align-items:flex-start;gap:8px}
+.faq-q i{color:var(--pri-lite);font-size:.8rem;margin-top:4px;flex-shrink:0}
+.faq-a{font-size:.87rem;color:var(--muted);line-height:1.7;padding-left:20px}
+
+/* Footer */
+.footer{background:var(--card);border-top:1px solid var(--border);padding-top:64px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px}
+.fc-brand .logo{margin-bottom:12px}
+.fc-brand p{color:var(--muted);font-size:.86rem;line-height:1.7;margin-bottom:18px}
+.socials{display:flex;gap:9px}
+.fc-col h4{font-family:var(--font-head);font-size:.93rem;font-weight:700;margin-bottom:16px;padding-bottom:10px;position:relative}
+.fc-col h4::after{content:'';position:absolute;bottom:0;left:0;width:24px;height:2px;background:var(--grad);border-radius:2px}
+.fc-col ul{display:flex;flex-direction:column;gap:9px}
+.fc-col ul a{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:.86rem;transition:all var(--ease)}
+.fc-col ul a:hover{color:var(--pri-lite);padding-left:4px}
+.fc-col ul a i{font-size:.65rem;color:var(--primary)}
+.fc-muted{opacity:.55;cursor:default;pointer-events:none}
+.footer-bottom{border-top:1px solid var(--border);padding:20px 0;text-align:center;color:var(--muted);font-size:.8rem}
+
+.back-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:.84rem;box-shadow:0 4px 18px rgba(124,58,237,.45);opacity:0;visibility:hidden;transform:translateY(16px);transition:all var(--ease);z-index:100}
+.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+
+@media(max-width:768px){
+  .main-nav{display:none;position:fixed;inset:72px 0 0;background:rgba(11,11,15,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start;padding:20px 16px;gap:4px;z-index:999}
+  .main-nav.open{display:flex}
+  .nav-item{width:100%;padding:12px 16px;font-size:.94rem}
+  .dropdown-panel{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;background:rgba(124,58,237,.05);padding:0 0 0 12px;margin-top:4px}
+  .mobile-toggle{display:flex}
+  .btn-subscribe{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header" class="header">
+  <div class="nav-wrap container">
+    <a href="index.html" class="logo">
+      <span class="logo-glyph">🎮</span>
+      <span class="logo-name">Joystick<em>Verse</em></span>
+    </a>
+    <nav id="mainNav" class="main-nav">
+      <a href="index.html" class="nav-item">Home</a>
+      <a href="index.html#posts" class="nav-item">Blog</a>
+      <div class="nav-dropdown">
+        <button class="nav-item dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-panel">
+          <a href="index.html#posts" class="dp-item"><span class="dp-icon"><i class="fas fa-fist-raised"></i></span><span class="dp-text"><strong>Action</strong><small>6 Articles</small></span></a>
+          <a href="#" class="dp-item dp-soon"><span class="dp-icon"><i class="fas fa-ghost"></i></span><span class="dp-text"><strong>Horror</strong><small>Coming Soon</small></span><span class="soon-pill">Soon</span></a>
+          <a href="#" class="dp-item dp-soon"><span class="dp-icon"><i class="fas fa-khanda"></i></span><span class="dp-text"><strong>Mythology</strong><small>Coming Soon</small></span><span class="soon-pill">Soon</span></a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-item">About</a>
+      <a href="contact.html" class="nav-item active">Contact</a>
+    </nav>
+    <div class="nav-controls">
+      <button id="themeBtn" class="ctrl-btn"><i class="fas fa-moon"></i></button>
+      <a href="index.html#newsletter" class="btn-subscribe"><i class="fas fa-bell"></i> Subscribe</a>
+      <button id="mobileToggle" class="mobile-toggle"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<div class="page-hero container">
+  <div class="page-hero-glow"></div>
+  <div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Contact</span></div>
+  <span class="section-eyebrow"><i class="fas fa-paper-plane"></i> Get In Touch</span>
+  <h1>Let's <span class="g">Connect</span></h1>
+  <p>Questions, feedback, or just want to talk about games? Reach out — I read every message.</p>
+</div>
+
+<main class="container contact-wrap">
+  <div class="contact-grid">
+
+    <!-- Contact Info -->
+    <div class="info-card">
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="mailto:ks0400698@gmail.com">ks0400698@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <div class="info-label">Based In</div>
+          <div class="info-value">New Delhi, India</div>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <div class="info-label">Response Time</div>
+          <div class="info-value">Within 24-48 hours</div>
+        </div>
+      </div>
+      <div class="info-divider"></div>
+      <div>
+        <div class="info-label" style="margin-bottom:10px;">Find me elsewhere</div>
+        <div class="social-row">
+          <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-card">
+      <h3><i class="fas fa-circle-question"></i> Common Questions</h3>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-caret-right"></i> Do you accept guest posts or collabs?</div>
+        <div class="faq-a">Not yet — JoystickVerse is a solo project for now. Once the site grows, this will open up. Feel free to email your ideas anyway.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-caret-right"></i> Can I request a game review?</div>
+        <div class="faq-a">Yes! Email the game name and platform and I'll add it to the coverage list — Action titles get priority right now.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-caret-right"></i> Found an error in an article?</div>
+        <div class="faq-a">Appreciated — email the article link and what's wrong, and it'll get corrected quickly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><i class="fas fa-caret-right"></i> Do you do sponsored content?</div>
+        <div class="faq-a">No. JoystickVerse reviews are unpaid and unsponsored — that's a core value here, not a marketing line.</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="fc-brand">
+        <a href="index.html" class="logo"><span class="logo-glyph">🎮</span><span class="logo-name">Joystick<em>Verse</em></span></a>
+        <p>Your go-to gaming blog for in-depth reviews, guides, and news. Built for real gamers.</p>
+        <div class="socials">
+          <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="fc-col"><h4>Quick Links</h4><ul>
+        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="index.html#posts"><i class="fas fa-chevron-right"></i> Blog</a></li>
+        <li><a href="index.html#newsletter"><i class="fas fa-chevron-right"></i> Newsletter</a></li>
+      </ul></div>
+      <div class="fc-col"><h4>Categories</h4><ul>
+        <li><a href="index.html#posts"><i class="fas fa-chevron-right"></i> Action</a></li>
+        <li><a href="#" class="fc-muted"><i class="fas fa-chevron-right"></i> Horror <span class="soon-pill">Soon</span></a></li>
+        <li><a href="#" class="fc-muted"><i class="fas fa-chevron-right"></i> Mythology <span class="soon-pill">Soon</span></a></li>
+      </ul></div>
+      <div class="fc-col"><h4>Legal</h4><ul>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Disclaimer</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 JoystickVerse. All rights reserved. Made with <span class="g">❤</span> for gamers.</p></div>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-top"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+const hdr=document.getElementById('header');window.addEventListener('scroll',()=>{if(hdr)hdr.classList.toggle('scrolled',window.scrollY>50)});
+const tog=document.getElementById('mobileToggle'),nav=document.getElementById('mainNav');
+if(tog&&nav){tog.addEventListener('click',()=>{nav.classList.toggle('open')})}
+const tb=document.getElementById('themeBtn');let dk=true;if(tb){tb.addEventListener('click',()=>{dk=!dk;document.documentElement.setAttribute('data-theme',dk?'dark':'light');tb.innerHTML=dk?'<i class="fas fa-moon"></i>':'<i class="fas fa-sun"></i>'})}
+const btt=document.getElementById('backToTop');window.addEventListener('scroll',()=>{if(btt)btt.classList.toggle('show',window.scrollY>400)});if(btt){btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))}
+</script>
+</body>
+</html>
