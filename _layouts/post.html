@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.description }}">
+  <meta name="keywords" content="{{ page.keywords }}">
+  <meta name="author" content="{{ page.author | default: site.author }}">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ page.title }} | JoystickVerse">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <meta property="og:site_name" content="JoystickVerse">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/images/{{ page.hero_image }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }} | JoystickVerse">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/images/{{ page.hero_image }}">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{{ page.schema_type | default: 'Article' }}",
+    "headline": "{{ page.title }}",
+    "author": { "@type": "Person", "name": "{{ page.author | default: site.author }}" },
+    "publisher": { "@type": "Organization", "name": "JoystickVerse" },
+    "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+    "image": "{{ site.url }}{{ site.baseurl }}/images/{{ page.hero_image }}"
+    {% if page.score %},"reviewRating": { "@type": "Rating", "ratingValue": "{{ page.score }}", "bestRating": "10" }{% endif %}
+  }
+  </script>
+
+  <title>{{ page.title }} | JoystickVerse</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/article.css">
+</head>
+<body>
+
+<div id="progressBar" class="progress-bar"></div>
+
+{% include header.html %}
+
+<!-- ===== ARTICLE HERO ===== -->
+<div class="article-hero">
+  <img src="{{ site.baseurl }}/images/{{ page.hero_image }}" alt="{{ page.title }}" loading="eager">
+  <div class="article-hero-overlay"></div>
+  <div class="article-hero-content container">
+    <div class="breadcrumb">
+      <a href="{{ site.baseurl }}/">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="{{ site.baseurl }}/blog.html">Blog</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>{{ page.title | truncatewords: 5 }}</span>
+    </div>
+    <span class="article-cat">{{ page.category | default: "Action" }}</span>
+    {% if page.label %}<span class="article-label">{{ page.label }}</span>{% endif %}
+    <h1 class="article-title">{{ page.title }}</h1>
+    <div class="article-meta">
+      <span><i class="fas fa-user-circle"></i> {{ page.author | default: site.author }}</span>
+      <span><i class="fas fa-calendar-alt"></i> {{ page.date | date: "%B %-d, %Y" }}</span>
+      <span><i class="fas fa-clock"></i> {{ page.read_time | default: "5 min" }} read</span>
+      {% if page.type %}<span><i class="fas fa-tag"></i> {{ page.type }}</span>{% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- ===== ARTICLE BODY ===== -->
+<main class="article-layout">
+
+  <!-- Share Bar -->
+  <div class="share-bar">
+    <span class="share-label"><i class="fas fa-share-alt"></i> Share</span>
+    <button class="share-btn" onclick="shareArticle('twitter')"><i class="fab fa-twitter"></i> Twitter</button>
+    <button class="share-btn" onclick="shareArticle('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+    <button class="share-btn" onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+  </div>
+
+  <!-- Score Box (auto from front matter) -->
+  {% if page.score %}
+  <div class="score-box">
+    <div class="score-circle">
+      <span class="score-num">{{ page.score }}</span>
+      <span class="score-max">/ 10</span>
+    </div>
+    <div class="score-text">
+      <h3>{{ page.score_label }}</h3>
+      <p>{{ page.score_summary }}</p>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Table of Contents (auto from front matter) -->
+  {% if page.toc %}
+  <div class="toc">
+    <div class="toc-title"><i class="fas fa-list"></i> Table of Contents</div>
+    <ol>
+      {% for item in page.toc %}
+      <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+
+  <!-- Article Content (written in Markdown) -->
+  <div class="article-body">
+    {{ content }}
+  </div>
+
+  <!-- Author Card -->
+  <div class="author-card">
+    <div class="author-avatar">🎮</div>
+    <div>
+      <div class="author-name">{{ page.author | default: site.author }}</div>
+      <div class="author-bio">{{ page.author_bio | default: "Gaming writer at JoystickVerse. Covers Action, Horror, and Mythology games." }}</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="article-nav">
+    <a href="{{ site.baseurl }}/blog.html" class="art-nav-btn"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+  </div>
+
+</main>
+
+{% include footer.html %}
+
+<script src="{{ site.baseurl }}/assets/js/script.js"></script>
+<script>
+// Article share functions
+function shareArticle(platform) {
+  const url = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  if (platform === 'twitter') window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+  if (platform === 'whatsapp') window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+}
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.querySelector('.share-btn:last-child');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => btn.innerHTML = orig, 2000);
+  });
+}
+</script>
+</body>
+</html>

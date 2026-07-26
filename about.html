@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
@@ -128,13 +131,13 @@ button{font-family:inherit;cursor:pointer}
 <!-- Header -->
 <header id="header" class="header">
   <div class="nav-wrap container">
-    <a href="index.html" class="logo">
+    <a href="{{ site.baseurl }}/" class="logo">
       <span class="logo-glyph">🎮</span>
       <span class="logo-name">Joystick<em>Verse</em></span>
     </a>
     <nav id="mainNav" class="main-nav">
-      <a href="index.html" class="nav-item">Home</a>
-      <a href="blog.html" class="nav-item">Blog</a>
+      <a href="{{ site.baseurl }}/" class="nav-item">Home</a>
+      <a href="{{ site.baseurl }}/blog.html" class="nav-item">Blog</a>
       <div class="nav-dropdown">
         <button class="nav-item dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></button>
         <div class="dropdown-panel">
@@ -143,8 +146,8 @@ button{font-family:inherit;cursor:pointer}
           <a href="#" class="dp-item dp-soon"><span class="dp-icon"><i class="fas fa-khanda"></i></span><span class="dp-text"><strong>Mythology</strong><small>Coming Soon</small></span><span class="soon-pill">Soon</span></a>
         </div>
       </div>
-      <a href="about.html" class="nav-item active">About</a>
-      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="{{ site.baseurl }}/about.html" class="nav-item active">About</a>
+      <a href="{{ site.baseurl }}/contact.html" class="nav-item">Contact</a>
     </nav>
     <div class="nav-controls">
       <button id="themeBtn" class="ctrl-btn"><i class="fas fa-moon"></i></button>
@@ -157,7 +160,7 @@ button{font-family:inherit;cursor:pointer}
 <!-- Page Hero -->
 <div class="page-hero container">
   <div class="page-hero-glow"></div>
-  <div class="breadcrumb"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>About</span></div>
+  <div class="breadcrumb"><a href="{{ site.baseurl }}/">Home</a> <i class="fas fa-chevron-right"></i> <span>About</span></div>
   <span class="section-eyebrow"><i class="fas fa-info-circle"></i> About Us</span>
   <h1>Built by a <span class="g">Gamer</span>, for Gamers</h1>
   <p>JoystickVerse is an independent gaming blog dedicated to honest, in-depth coverage of the games that matter — no sponsored fluff, just real takes.</p>
@@ -215,7 +218,7 @@ button{font-family:inherit;cursor:pointer}
   <div class="container">
     <div class="footer-grid">
       <div class="fc-brand">
-        <a href="index.html" class="logo"><span class="logo-glyph">🎮</span><span class="logo-name">Joystick<em>Verse</em></span></a>
+        <a href="{{ site.baseurl }}/" class="logo"><span class="logo-glyph">🎮</span><span class="logo-name">Joystick<em>Verse</em></span></a>
         <p>Your go-to gaming blog for in-depth reviews, guides, and news. Built for real gamers.</p>
         <div class="socials">
           <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
@@ -225,8 +228,8 @@ button{font-family:inherit;cursor:pointer}
         </div>
       </div>
       <div class="fc-col"><h4>Quick Links</h4><ul>
-        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+        <li><a href="{{ site.baseurl }}/"><i class="fas fa-chevron-right"></i> Home</a></li>
+        <li><a href="{{ site.baseurl }}/blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
         <li><a href="index.html#newsletter"><i class="fas fa-chevron-right"></i> Newsletter</a></li>
       </ul></div>
       <div class="fc-col"><h4>Categories</h4><ul>

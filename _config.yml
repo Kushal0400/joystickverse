@@ -1,0 +1,39 @@
+# ============================================================
+# JoystickVerse — Jekyll Configuration
+# ============================================================
+
+title:       "JoystickVerse"
+description: "Your go-to gaming blog for in-depth Action game reviews, guides, walkthroughs, and tips."
+url:         "https://kushal0400.github.io"
+baseurl:     "/joystickverse"
+author:      "Kushal Sharma"
+email:       ""
+
+# Build Settings
+markdown:  kramdown
+highlighter: rouge
+
+# Permalink structure: /game-title/ (clean URLs)
+permalink: /:title/
+
+# Collections & Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout:   "post"
+      author:   "Kushal Sharma"
+
+# Exclude from Jekyll build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .git
+  - node_modules
+
+# Plugins (GitHub Pages safe)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

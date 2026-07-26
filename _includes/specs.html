@@ -1,0 +1,11 @@
+{% if page.specs %}
+<div class="specs-box">
+  <div class="specs-title">⚡ Quick Info</div>
+  {% for item in page.specs %}
+  <div class="specs-row">
+    <span class="specs-key">{{ item[0] }}</span>
+    <span class="specs-val">{{ item[1] }}</span>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
