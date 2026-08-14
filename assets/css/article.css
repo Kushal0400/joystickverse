@@ -151,4 +151,73 @@ button{font-family:inherit;cursor:pointer}
   .share-bar{flex-wrap:wrap}
   .pros-cons{grid-template-columns:1fr}
   .score-box{flex-direction:column;text-align:center}
+}/* ===== COMPLETE LIGHT MODE FIX ===== */
+[data-theme="light"] .article-body,
+[data-theme="light"] .article-body p,
+[data-theme="light"] .article-body h2,
+[data-theme="light"] .article-body h3,
+[data-theme="light"] .article-body h4,
+[data-theme="light"] .article-body li,
+[data-theme="light"] .article-body strong,
+[data-theme="light"] .article-body span {
+  color: #0B0B0F !important;
+}
+
+[data-theme="light"] .toc,
+[data-theme="light"] .toc a,
+[data-theme="light"] .toc-title { 
+  color: #0B0B0F !important; 
+  background: #f0f0f5 !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+
+[data-theme="light"] .specs-box,
+[data-theme="light"] .specs-key,
+[data-theme="light"] .specs-val,
+[data-theme="light"] .specs-title { 
+  color: #0B0B0F !important;
+  background: #f0f0f5 !important;
+}
+
+[data-theme="light"] .pros-cons .pc-box,
+[data-theme="light"] .pros-cons li,
+[data-theme="light"] .pros-cons h4 { 
+  color: #0B0B0F !important;
+}
+
+[data-theme="light"] .warn-box,
+[data-theme="light"] .warn-box p,
+[data-theme="light"] .warn-box strong { 
+  color: #0B0B0F !important;
+  background: #fff8e1 !important;
+}
+
+[data-theme="light"] .verdict-box,
+[data-theme="light"] .verdict-box p,
+[data-theme="light"] .verdict-title { 
+  color: #0B0B0F !important;
+  background: #f0f0f5 !important;
+}
+
+[data-theme="light"] .score-box .score-text h3,
+[data-theme="light"] .score-box .score-text p { 
+  color: #0B0B0F !important;
+}
+
+[data-theme="light"] .author-card,
+[data-theme="light"] .author-name,
+[data-theme="light"] .author-bio { 
+  color: #0B0B0F !important;
+  background: #f0f0f5 !important;
+}
+
+[data-theme="light"] .article-hero .article-title,
+[data-theme="light"] .article-hero .article-meta span,
+[data-theme="light"] .article-hero .breadcrumb,
+[data-theme="light"] .article-hero .breadcrumb a {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .share-bar { 
+  background: #e8e8f0 !important; 
 }
