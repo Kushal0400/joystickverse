@@ -1,0 +1,68 @@
+---
+layout: null
+title: "Horror Games — JoystickVerse"
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Best horror game reviews and guides on JoystickVerse. Survive the darkness with in-depth breakdowns.">
+  <meta name="robots" content="index, follow">
+  <title>Horror Games — JoystickVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+
+  <div id="progressBar" class="progress-bar"></div>
+
+  {% include header.html %}
+
+  <section class="section posts-section" style="padding-top:120px">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-eyebrow"><i class="fas fa-ghost"></i> Horror Games</span>
+        <h2>Face Your <span class="g">Fears</span></h2>
+        {% assign horror_posts = site.posts | where: "category", "Horror" %}
+        <p>{{ horror_posts | size }} horror articles published and counting.</p>
+      </div>
+
+      <div class="posts-grid">
+        {% assign horror_posts = site.posts | where: "category", "Horror" %}
+        {% for post in horror_posts %}
+        <article class="post-card reveal" data-delay="{{ forloop.index0 }}">
+          <div class="card-img">
+            <img src="{{ site.baseurl }}/images/{{ post.hero_image }}" alt="{{ post.title }}" loading="lazy">
+            <div class="card-img-overlay"></div>
+            <span class="cat-tag">{{ post.category }}</span>
+            {% if post.label %}<span class="card-label label-new">{{ post.label }}</span>{% endif %}
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span><i class="fas fa-user-circle"></i> {{ post.author | default: site.author }}</span>
+              <span><i class="fas fa-calendar-alt"></i> {{ post.date | date: "%B %-d, %Y" }}</span>
+              <span><i class="fas fa-clock"></i> {{ post.read_time | default: "5 min" }} read</span>
+            </div>
+            <h3 class="card-title">{{ post.title }}</h3>
+            <p class="card-excerpt">{{ post.excerpt }}</p>
+            <div class="card-foot">
+              <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+              <div class="card-acts">
+                <button class="act-btn like-btn" aria-label="Like"><i class="fas fa-heart"></i> <span>0</span></button>
+                <button class="act-btn bkmk-btn" aria-label="Bookmark"><i class="fas fa-bookmark"></i></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% include footer.html %}
+  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+</body>
+</html>
