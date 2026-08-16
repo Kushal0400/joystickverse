@@ -59,10 +59,9 @@ title: "JoystickVerse — Level Up Your Gaming Knowledge"
               <span class="dp-icon"><i class="fas fa-fist-raised"></i></span>
               <span class="dp-text"><strong>Action</strong><small>{{ site.posts | size }} Articles</small></span>
             </a>
-            <a href="#" class="dp-item dp-soon" aria-disabled="true">
+            <a href="{{ site.baseurl }}/horror/" class="dp-item">
               <span class="dp-icon"><i class="fas fa-ghost"></i></span>
-              <span class="dp-text"><strong>Horror</strong><small>Coming Soon</small></span>
-              <span class="soon-pill">Soon</span>
+              <span class="dp-text"><strong>Horror</strong><small>{{ site.posts | where: "category", "Horror" | size }} Articles</small></span>
             </a>
             <a href="#" class="dp-item dp-soon" aria-disabled="true">
               <span class="dp-icon"><i class="fas fa-khanda"></i></span>
@@ -113,7 +112,7 @@ title: "JoystickVerse — Level Up Your Gaming Knowledge"
       <div class="hero-stats">
         <div class="hstat"><span class="hstat-num">{{ site.posts | size }}</span><span class="hstat-lbl">Articles</span></div>
         <span class="hstat-sep"></span>
-        <div class="hstat"><span class="hstat-num">1</span><span class="hstat-lbl">Category</span></div>
+        <div class="hstat"><span class="hstat-num">{{ site.categories | size }}</span><span class="hstat-lbl">Categories</span></div>
         <span class="hstat-sep"></span>
         <div class="hstat"><span class="hstat-num">∞</span><span class="hstat-lbl">Knowledge</span></div>
       </div>
@@ -125,13 +124,13 @@ title: "JoystickVerse — Level Up Your Gaming Knowledge"
   <section id="posts" class="section posts-section">
     <div class="container">
       <div class="section-head reveal">
-        <span class="section-eyebrow"><i class="fas fa-gamepad"></i> Action Games</span>
+        <span class="section-eyebrow"><i class="fas fa-gamepad"></i> Latest Games</span>
         <h2>Latest <span class="g">Articles</span></h2>
-        <p>In-depth coverage of the most legendary action titles ever made.</p>
+        <p>In-depth coverage of the most legendary games ever made.</p>
       </div>
 
       <div class="posts-grid">
-        {% for post in site.posts %}
+        {% for post in site.posts limit:7 %}
         <article class="post-card {% if forloop.first %}card-featured{% endif %} reveal" data-delay="{{ forloop.index0 }}">
           <div class="card-img">
             <img src="{{ site.baseurl }}/images/{{ post.hero_image }}" alt="{{ post.title }}" loading="lazy">
@@ -167,20 +166,21 @@ title: "JoystickVerse — Level Up Your Gaming Knowledge"
       <div class="section-head reveal">
         <span class="section-eyebrow"><i class="fas fa-th-large"></i> Explore</span>
         <h2>Game <span class="g">Categories</span></h2>
-        <p>We're starting with Action. Horror and Mythology are on the way.</p>
+        <p>Action and Horror are live. Mythology is coming soon.</p>
       </div>
       <div class="cats-grid">
-        <div class="cat-card cat-active reveal" data-delay="0">
+        <a href="{{ site.baseurl }}/action/" class="cat-card cat-active reveal" data-delay="0">
           <div class="cat-icon"><i class="fas fa-fist-raised"></i></div>
           <h3>Action</h3>
-          <p>{{ site.posts | size }} Articles</p>
+          <p>{{ site.posts | where: "category", "Action" | size }} Articles</p>
           <div class="cat-glow"></div>
-        </div>
-        <div class="cat-card cat-locked reveal" data-delay="1">
+        </a>
+        <a href="{{ site.baseurl }}/horror/" class="cat-card cat-active reveal" data-delay="1">
           <div class="cat-icon"><i class="fas fa-ghost"></i></div>
-          <h3>Horror</h3><p>Coming Soon</p>
-          <span class="lock-badge">🔜</span>
-        </div>
+          <h3>Horror</h3>
+          <p>{{ site.posts | where: "category", "Horror" | size }} Articles</p>
+          <div class="cat-glow"></div>
+        </a>
         <div class="cat-card cat-locked reveal" data-delay="2">
           <div class="cat-icon"><i class="fas fa-khanda"></i></div>
           <h3>Mythology</h3><p>Coming Soon</p>
