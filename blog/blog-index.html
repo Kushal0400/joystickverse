@@ -14,6 +14,49 @@ title: "All Articles — JoystickVerse"
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+  <style>
+    /* ===== POSTS GRID FIX — Works for any number of articles ===== */
+    .posts-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 24px !important;
+    }
+    .posts-grid .post-card {
+      grid-column: span 1 !important;
+      min-width: 0 !important;
+    }
+    .posts-grid .post-card.card-featured {
+      grid-column: 1 / -1 !important;
+    }
+    @media (max-width: 1024px) {
+      .posts-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .posts-grid .post-card.card-featured { grid-column: 1 / -1 !important; }
+    }
+    @media (max-width: 640px) {
+      .posts-grid { grid-template-columns: 1fr !important; }
+      .posts-grid .post-card.card-featured { grid-column: 1 !important; }
+    }
+
+    /* ===== LOAD MORE ===== */
+    .hidden-card { display: none !important; }
+    .load-more-wrap { text-align: center; margin: 48px 0 24px; }
+    .btn-load-more {
+      background: linear-gradient(135deg,#7C3AED,#00E5FF);
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: opacity 0.3s, transform 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+    .btn-load-more:hover { opacity: 0.85; transform: translateY(-2px); }
+  </style>
 </head>
 <body>
 
@@ -29,9 +72,9 @@ title: "All Articles — JoystickVerse"
         <p>{{ site.posts | size }} articles published and counting.</p>
       </div>
 
-      <div class="posts-grid">
+      <div class="posts-grid" id="postsGrid">
         {% for post in site.posts %}
-        <article class="post-card reveal" data-delay="{{ forloop.index0 }}">
+        <article class="post-card reveal {% if forloop.index > 6 %}hidden-card{% endif %}" data-delay="{{ forloop.index0 }}">
           <div class="card-img">
             <img src="{{ site.baseurl }}/images/{{ post.hero_image }}" alt="{{ post.title }}" loading="lazy">
             <div class="card-img-overlay"></div>
@@ -57,10 +100,26 @@ title: "All Articles — JoystickVerse"
         </article>
         {% endfor %}
       </div>
+
+      {% if site.posts.size > 6 %}
+      <div class="load-more-wrap" id="loadMoreWrap">
+        <button class="btn-load-more" id="loadMoreBtn" onclick="loadMoreCards()">
+          <i class="fas fa-plus"></i> Load More Articles
+        </button>
+      </div>
+      {% endif %}
+
     </div>
   </section>
 
   {% include footer.html %}
   <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+  <script>
+    function loadMoreCards() {
+      const hidden = document.querySelectorAll('.hidden-card');
+      hidden.forEach(card => card.classList.remove('hidden-card'));
+      document.getElementById('loadMoreWrap').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
