@@ -1,0 +1,41 @@
+{% comment %}
+  Related articles block. Same category first, then newest from other categories.
+  Shows up to 3 cards, never includes the current post.
+{% endcomment %}
+{% assign current_cat = page.category | default: "Action" %}
+{% assign same_cat = site.posts | where: "category", current_cat | where_exp: "p", "p.url != page.url" %}
+{% assign other_cat = site.posts | where_exp: "p", "p.category != current_cat" %}
+{% assign related_pool = same_cat | concat: other_cat %}
+
+{% if related_pool.size > 0 %}
+<section class="related-posts" aria-labelledby="related-heading">
+  <h2 id="related-heading" class="related-heading">Keep reading</h2>
+  <div class="related-grid">
+    {% for p in related_pool limit: 3 %}
+    <a class="related-card" href="{{ site.baseurl }}{{ p.url }}">
+      <div class="related-thumb">
+        <img src="{{ site.baseurl }}/images/{{ p.hero_image }}" alt="{{ p.title | escape }}" loading="lazy" width="400" height="225">
+      </div>
+      <div class="related-body">
+        <span class="related-cat">{{ p.category | default: "Action" }}</span>
+        <h3 class="related-title">{{ p.title }}</h3>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .related-posts{margin-top:52px;padding-top:30px;border-top:1px solid var(--border)}
+  .related-heading{font-family:var(--font-head);font-size:1.25rem;font-weight:800;margin-bottom:20px}
+  .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .related-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color var(--ease)}
+  .related-card:hover,.related-card:focus-visible{border-color:var(--primary)}
+  .related-thumb{aspect-ratio:16/9;overflow:hidden;background:var(--surface)}
+  .related-thumb img{width:100%;height:100%;object-fit:cover}
+  .related-body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:8px}
+  .related-cat{font-size:.72rem;font-weight:600;color:var(--pri-lite)}
+  .related-title{font-family:var(--font-head);font-size:.92rem;font-weight:700;line-height:1.35}
+  @media(max-width:768px){.related-grid{grid-template-columns:1fr}}
+</style>
+{% endif %}

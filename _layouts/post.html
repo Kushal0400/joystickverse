@@ -37,6 +37,7 @@
   </script>
 
   <title>{{ page.title }} | JoystickVerse</title>
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,6 +125,9 @@
       <div class="author-bio">{{ page.author_bio | default: "Gaming writer at JoystickVerse. Covers Action, Horror, and Mythology games." }}</div>
     </div>
   </div>
+
+  <!-- Related Articles (internal links) -->
+  {% include related-posts.html %}
 
   <!-- Navigation -->
   <div class="article-nav">
